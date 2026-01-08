@@ -18,13 +18,10 @@ def analyze_numbers(numbers):
         "min": minimum,
         "max": maximum
     }
+ 
 
-
-def main():
-    # This function collects a series of numbers from the user and displays them.
-
+def collect_and_analyze():
     numbers = []
-
     count = int(input("How many numbers would you like to enter?: "))
     while True:
         if count > 0:
@@ -63,6 +60,24 @@ def main():
         print("No numbers to analyze.")
 
 
+def main():
+
+    # show menu options
+    #1) Enter numbers and analyze
+    #2) Exit the program
+    # Ask user to choose an option
+    while True:
+        print("\nMenu:")
+        print("1) Enter numbers and analyze")
+        print("2) Exit the program")
+        choice = input("Please choose an option (1 or 2): ")
+        if choice == "1":
+            collect_and_analyze()
+        elif choice == "2":
+            print("Exiting the program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please select 1 or 2.")
 
     
 
