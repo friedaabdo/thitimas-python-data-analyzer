@@ -1,5 +1,5 @@
 from datetime import datetime
-from storage import save_numbers
+from storage import save_numbers, load_numbers
 
 def analyze_numbers(numbers):
     # This function takes a list of numbers and returns basic statistics.
@@ -92,8 +92,9 @@ def main():
         print("\nMenu:")
         print("1) Enter numbers and analyze")
         print("2) Save numbers to JSON file")
-        print("3) Exit the program")
-        choice = input("Please choose an option (1, 2, or 3): ")
+        print("3) Load numbers from JSON file")
+        print("4) Exit the program")
+        choice = input("Please choose an option (1, 2, 3, or 4): ")
         if choice == "1":
             numbers = collect_and_analyze()
         elif choice == "2":
@@ -104,10 +105,18 @@ def main():
             else:
                 print("Numbers saved to data.json")
         elif choice == "3":
+            try:
+                numbers = load_numbers()
+            except Exception as e:
+                print(f"Failed to load numbers: {e}")
+            else:
+                print("Numbers loaded from data.json")
+
+        elif choice == "4":
             print("Exiting the program. Goodbye!")
             break
         else:
-            print("Invalid choice. Please select 1, 2, or 3.")
+            print("Invalid choice. Please select 1, 2, 3, or 4.")
     
 
 
