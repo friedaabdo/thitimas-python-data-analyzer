@@ -1,4 +1,5 @@
 from datetime import datetime
+from storage import save_numbers
 
 def analyze_numbers(numbers):
     # This function takes a list of numbers and returns basic statistics.
@@ -77,6 +78,7 @@ def collect_and_analyze():
         f.write(f"Minimum: {results.get('min')}\n")
         f.write(f"Maximum: {results.get('max')}\n")
     print("\nAnalysis report saved to report.txt")
+    return numbers
 
 
 def main():
@@ -85,19 +87,27 @@ def main():
     #1) Enter numbers and analyze
     #2) Exit the program
     # Ask user to choose an option
+    numbers = []
     while True:
         print("\nMenu:")
         print("1) Enter numbers and analyze")
-        print("2) Exit the program")
-        choice = input("Please choose an option (1 or 2): ")
+        print("2) Save numbers to JSON file")
+        print("3) Exit the program")
+        choice = input("Please choose an option (1, 2, or 3): ")
         if choice == "1":
-            collect_and_analyze()
+            numbers = collect_and_analyze()
         elif choice == "2":
+            try:
+                save_numbers(numbers)
+            except Exception as e:
+                print(f"Failed to save numbers: {e}")
+            else:
+                print("Numbers saved to data.json")
+        elif choice == "3":
             print("Exiting the program. Goodbye!")
             break
         else:
-            print("Invalid choice. Please select 1 or 2.")
-
+            print("Invalid choice. Please select 1, 2, or 3.")
     
 
 
