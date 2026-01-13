@@ -16,13 +16,13 @@
 
   <main class="container">
     <section class="card" role="region" aria-labelledby="enter-title">
-      <h2 id="enter-title">Enter Numbers</h2>
+      <h2 id="enter-title">Hey, {{ name }}, Enter Numbers</h2>
 
       <form action="/analyze" method="post" novalidate class="form">
         <label for="numbers" class="label">Numbers (separate with commas or whitespace)</label>
         <textarea id="numbers" name="numbers" rows="5" placeholder="e.g. 1, 2.5, 3" required aria-describedby="error" class="textarea"></textarea>
 
-        <div id="error" role="alert" aria-live="assertive" class="error" hidden></div>
+        <div id="error" role="alert" aria-live="assertive" class="error">{{ error }}</div>
 
         <div class="form-actions">
           <button type="submit" class="btn primary">Submit</button>
