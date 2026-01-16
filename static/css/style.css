@@ -29,10 +29,10 @@
   --result-gradient-2:#fbfdff;
   --numbers-bg:#f7fafc;
   --error:#b91c1c;
-  --btn-primary:#10b981;
-  --btn-primary-hover:#059669;
-  --btn-secondary:#8b5cf6;
-  --btn-shadow:rgba(16,185,129,0.15);
+  --btn-primary:#f59e0b;
+  --btn-primary-hover:#d97706;
+  --btn-secondary:#14b8a6;
+  --btn-shadow:rgba(245,158,11,0.2);
 }
 
 /* Dark mode theme */
@@ -63,10 +63,10 @@
     --result-gradient-2:#1a2332;
     --numbers-bg:#1a2332;
     --error:#ef4444;
-    --btn-primary:#10b981;
-    --btn-primary-hover:#34d399;
-    --btn-secondary:#a78bfa;
-    --btn-shadow:rgba(16,185,129,0.25);
+    --btn-primary:#fb923c;
+    --btn-primary-hover:#fdba74;
+    --btn-secondary:#2dd4bf;
+    --btn-shadow:rgba(251,146,60,0.25);
   }
 }
 
@@ -106,7 +106,7 @@ body{
   margin:0;
   font-size:24px;
   font-weight:700;
-  color:var(--accent);
+  color:#f59e0b;
   letter-spacing:0.4px;
 }
 .tagline{
