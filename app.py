@@ -7,8 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    a = "Thitima"
-    return render_template("index.html", name=a)
+    return render_template("index.html")
 
 @app.route('/analyze', methods=['GET', 'POST']) 
 def analyze():
@@ -50,7 +49,9 @@ def analyze_weather():
         
         times, temperatures, unit = fetch_hourly_temperature(latitude, longitude)
         results = analyze_time_series(times, temperatures)
-        return render_template("weather_analysis_results.html", analysis=results, temperature_unit=unit)
+
+        return render_template("weather_analysis_results.html", analysis=results, temperature_unit=unit, latitude=latitude, longitude=longitude)
+
     error_message = "Please provide valid latitude and longitude."
     return render_template("weather_input.html", error=error_message)
 
